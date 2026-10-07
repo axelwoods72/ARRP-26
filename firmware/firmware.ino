@@ -18,7 +18,7 @@ Adafruit_SSD1306 display(128, 64, &Wire, -1);
 void setup() {
 	Serial.begin(115200);
 
-	// Init OLED
+	/* OLED init */
 	Wire.begin(I2C_SDA, I2C_SCL);
 	display.begin(SSD1306_SWITCHCAPVCC, 0x3C);
 	display.clearDisplay();
