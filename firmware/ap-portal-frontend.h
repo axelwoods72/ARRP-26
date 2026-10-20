@@ -45,6 +45,10 @@ const char index_html[] PROGMEM = R"rawliteral(
       background: #5b8dd9;
     }
     .btn-face:active { background: #3a6bbf; }
+    .btn-student {
+      background: #27ae60;
+    }
+    .btn-student:active { background: #1e8449; }
   </style>
 </head>
 <body>
@@ -65,12 +69,23 @@ const char index_html[] PROGMEM = R"rawliteral(
     <button class="btn-face" onclick="face('cute')">Cute</button>
   </div>
 
+  <h2>Custom Moves</h2>
+  <div class="group">
+    <button class="btn-student" onclick="student('brielle')">Brielle</button>
+    <button class="btn-student" onclick="student('kosta')">Kosta</button>
+    <button class="btn-student" onclick="student('stephan')">Stephan</button>
+    <button class="btn-student" onclick="student('tanish')">Tanish</button>
+  </div>
+
   <script>
     function pose(name) {
       fetch('/cmd?pose=' + name).catch(console.error);
     }
     function face(name) {
       fetch('/cmd?face=' + name).catch(console.error);
+    }
+    function student(name) {
+      fetch('/cmd?student=' + name).catch(console.error);
     }
   </script>
 </body>
