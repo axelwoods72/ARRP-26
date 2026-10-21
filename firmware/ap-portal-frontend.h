@@ -75,6 +75,7 @@ const char index_html[] PROGMEM = R"rawliteral(
     <button class="btn-student" onclick="student('kosta')">Kosta</button>
     <button class="btn-student" onclick="student('stephan')">Stephan</button>
     <button class="btn-student" onclick="student('tanish')">Tanish</button>
+    <button class="btn-student" onclick="student('felix')">Felix</button>
   </div>
 
   <script>

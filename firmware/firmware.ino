@@ -7,6 +7,7 @@
 #include "ap-portal-frontend.h"
 #include "face-bitmaps.h"
 #include "servo-sequences.h"
+#include "face-felix-frames.h"
 
 // ----------------------------------------------------------------------
 //  AP CREDENTIALS
@@ -140,6 +141,18 @@ void setup() {
 		}
 
 		// --- Student demos ---
+		// Helper: animate Felix's 8-frame sequence (plays 3 loops)
+		auto animateFelix = [&]() {
+			for (int rep = 0; rep < 3; rep++) {
+				for (int f = 0; f < 8; f++) {
+					display.clearDisplay();
+					display.drawBitmap(0, 0, arrp26_frames[f], 128, 64, WHITE);
+					display.display();
+					delay(arrp26_duration_ms[f]);
+				}
+			}
+		};
+
 		if (student != "") {
 			Serial.println("Student: " + student);
 			display.clearDisplay();
@@ -156,6 +169,9 @@ void setup() {
 			} else if (student == "tanish") {
 				poseTanish();
 				display.drawBitmap(0, 0, face_tanish, 128, 64, WHITE);
+			} else if (student == "felix") {
+				poseStand();
+				animateFelix();
 			}
 
 			display.display();
