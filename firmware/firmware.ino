@@ -124,7 +124,7 @@ void setup() {
 
 		// --- Pose ---
 		if (pose != "") {
-			if      (pose == "stand")    poseStand();
+			if      (pose == "stand_up")  poseStand();
 			else if (pose == "lay_down") poseLayDown();
 			else if (pose == "wave")     poseWave();
 		}
