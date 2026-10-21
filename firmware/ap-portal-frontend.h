@@ -73,7 +73,8 @@ const char index_html[] PROGMEM = R"rawliteral(
   <div class="group">
     <button class="btn-student" onclick="student('brielle')">Brielle</button>
     <button class="btn-student" onclick="student('kosta')">Kosta</button>
-    <button class="btn-student" onclick="student('stephan')">Stephan</button>
+    <button class="btn-student" onclick="student('stephan_dance')">Stephan (Dance)</button>
+    <button class="btn-student" onclick="student('stephan_bounce')">Stephan (Bounce)</button>
     <button class="btn-student" onclick="student('tanish')">Tanish</button>
     <button class="btn-student" onclick="student('felix')">Felix</button>
   </div>

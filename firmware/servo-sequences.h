@@ -104,11 +104,59 @@ void poseKosta() {
 	}
 }
 
-void poseStephan() {
-	Serial.println("Pose: Stephan");
-	setServoAngle(R1, 135);
-	delay(500);
-	setServoAngle(R1, 135);
+void poseStephanDance() {
+	Serial.println("Pose: Stephan (Dance)");
+	poseStand();
+	delay(300);
+
+	const int bend = 20;
+	const int beat = 350;
+
+	for (int i = 0; i < 8; i++) {
+		setServoAngle(R3, 180 - bend);
+		setServoAngle(R4, bend);
+		setServoAngle(L3, 0);
+		setServoAngle(L4, 180);
+		delay(beat);
+
+		setServoAngle(R3, 180);
+		setServoAngle(R4, 0);
+		setServoAngle(L3, bend);
+		setServoAngle(L4, 180 - bend);
+		delay(beat);
+	}
+	poseStand();
+}
+
+void poseStephanBounce() {
+	Serial.println("Pose: Stephan (Bounce)");
+	poseStand();
+	delay(300);
+
+	const int bend = 45;
+	const int momentum = 10;
+	const int momentumDivider = 2;
+	const int beat = 350;
+
+	setServoAngle(R1, 135 - bend);
+	setServoAngle(R2, 45 - bend);
+	setServoAngle(L1, 45 - bend);
+	setServoAngle(L2, 135 - bend);
+	delay(beat);
+
+	setServoAngle(R1, 135 + momentum);
+	setServoAngle(R2, 45 + momentum);
+	setServoAngle(L1, 45 + momentum);
+	setServoAngle(L2, 135 + momentum);
+	delay(beat);
+
+	setServoAngle(R1, 135 - momentum / momentumDivider);
+	setServoAngle(R2, 45 - momentum / momentumDivider);
+	setServoAngle(L1, 45 - momentum / momentumDivider);
+	setServoAngle(L2, 135 - momentum / momentumDivider);
+	delay(beat / momentumDivider);
+
+	poseStand();
 }
 
 void poseTanish() {

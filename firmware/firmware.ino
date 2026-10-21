@@ -163,8 +163,11 @@ void setup() {
 			} else if (student == "kosta") {
 				poseKosta();
 				display.drawBitmap(0, 0, face_happy, 128, 64, WHITE);
-			} else if (student == "stephan") {
-				poseStephan();
+			} else if (student == "stephan_dance") {
+				poseStephanDance();
+				display.drawBitmap(0, 0, face_cute, 128, 64, WHITE);
+			} else if (student == "stephan_bounce") {
+				poseStephanBounce();
 				display.drawBitmap(0, 0, face_cute, 128, 64, WHITE);
 			} else if (student == "tanish") {
 				poseTanish();
